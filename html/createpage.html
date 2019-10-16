@@ -1,7 +1,7 @@
 <html>
 <style>
 body {
-	background-color: black;
+	background-color: #2C3539;
 
 }
 h2 {
@@ -29,6 +29,12 @@ button {
 	color: black;
 	text-align: center;
 	button-align: center;
+}
+p {
+	color:white;
+	text-align: center;
+
+
 }
 table td {
 
@@ -73,13 +79,21 @@ table td {
 </style>
 	<body>
 		<h2>This is the page</h2>
-		<div id="quoteDisplay">
-
-		</div>
 		
-		<center><button onclick="newQuote()">New Quote</button></center>
-
-		<script src="javascript.js"></script>
+		<script type="text/javascript">
+			window.onload = function() {
+				var randomNumber =Math.floor( Math.random()*10000+1);
+				var randomNumber2=Math.floor(Math.random()*10000+1);
+				while(randomNumber==randomNumber2){
+					randomNumber2=Math.floor(Math.random()*10000+1);
+				}
+				document.getElementById('boldStuff').innerHTML =randomNumber;
+				document.getElementById('boldStuff2').innerHTML =randomNumber2;
+			}
+		</script>
+		<!--<center><input type='button' value="Button 1" id="b1" onclick='changeText()'/></center>-->
+		<p>Spectator Key: <b id='boldStuff'>dude</b></p>
+		<p>Judge Key: <b id ='boldStuff2'>dude</b></p>
 	</body>
 
 	<form>
@@ -131,5 +145,9 @@ table td {
 		</tr>
 	</table>
 	</div>
-	
+	<button>Add Teams</button>
+	<form action="categorypage.html" method="post">
+		
+		<button type="submite">Done</button>
+	</form>
 </html>
