@@ -1,20 +1,18 @@
+<!-- This is the code for the home page -->
 <!DOCTYPE html>
 <html>
 <head>
+<title>Home Page</title>
+<style> /*starting here is in CSS*/
 
-	<title>Login Page</title>
-    
-     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    
-	<style>
-    
+	/*The page background*/
 	body {
-		background-image: linear-gradient(to right, darkslateblue, rgb(122, 191, 120), darkslateblue);
+		background-image: linear-gradient(to right, darkslategrey, salmon, darkslategrey);
 		background-image: no-repeat;
 	}
-    
+
+	/*Wrapper containing the title and two buttons*/		
 	div.container {
-    	font-family: Helvetica, sans-serif;
 		background-color: rgba(230, 230, 230, 0.4);
 		border: 10px double black;
 		padding-top: 20px;
@@ -22,21 +20,21 @@
 		padding-right: 50px;
 		padding-bottom: 35px;
 		position: absolute;
-		top: 30%;
+		top: 40%;
 		left: 50%;
 		transform: translate(-50%, -50%)
 	}
-    
-	h1 {
-    	font-size: 2em;
-    	width: 240px;
+
+	/*Title*/
+	h1 {	/*This is for the page title*/
+		font-family: Helvetica, sans-serif;
 		color: black;
 		text-align: center;
-        margin-bottom: 50px;
-	}
-    
-    button {
-    	background-color: white;
+		}
+
+	/*Styling for the two buttons*/		
+	button {
+		background-color: white;
 		font-size: 0.85em;
 		border: 1px black;
 		border-radius: 15px;
@@ -44,40 +42,28 @@
 		padding-left: 20px;
 		padding-right: 20px;
 		padding-bottom: 7px;
-    }
-    
-    button:hover {
-		background-color: snow;
+	}
+
+	button:hover {
+		background-color: gainsboro;
 		transition-duration: 0.4s;
 	}
-    
-    #button1 {
-        position: absolute;
-		top: 70%;
-		left: 25%;
-		transform: translate(-50%, -50%)
-    }
-    
-    #button2 {
-    	position: absolute;
-    	top: 70%;
-		left: 75%;
-		transform: translate(-50%, -50%)
-    }
-    
-	</style>
-    
+
+/*end of CSS*/
+</style>
 </head>
 
 <body>
-
 	<div class=container>
-		<h1>Join Debate as</h1>
-        
-         <button type="button" id="button1" onclick=>Spectator</button> 
-        
-         <button type="button" id="button2" onclick=>Judge</button> 
+		<center><h1> Welcome to Debate Reporter </h1></center>
+	
+		<form action="createpage.html" method="post">
+			<center><button type="submit">Create Event</button></center>
+		</form>
+
+		<form action="categorypage.html" method="post">
+			<center><button type="submit">Join Event</button></center>
+		</form>
 	</div>
-    
 </body>
 </html>

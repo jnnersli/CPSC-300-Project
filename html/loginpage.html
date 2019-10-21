@@ -1,13 +1,20 @@
+<!DOCTYPE html>
 <html>
 <head>
-<title>Login Page</title>
-<style>
+
+	<title>Login Page</title>
+    
+     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    
+	<style>
+    
 	body {
 		background-image: linear-gradient(to right, darkslateblue, rgb(122, 191, 120), darkslateblue);
 		background-image: no-repeat;
 	}
+    
 	div.container {
-		width: 300px;
+    	font-family: Helvetica, sans-serif;
 		background-color: rgba(230, 230, 230, 0.4);
 		border: 10px double black;
 		padding-top: 20px;
@@ -19,17 +26,58 @@
 		left: 50%;
 		transform: translate(-50%, -50%)
 	}
+    
 	h1 {
+    	font-size: 2em;
+    	width: 240px;
 		color: black;
 		text-align: center;
-		font-family: Helvetica, sans-serif;
-		font-size: 2em;
+        margin-bottom: 50px;
 	}
-</style>
+    
+    button {
+    	background-color: white;
+		font-size: 0.85em;
+		border: 1px black;
+		border-radius: 15px;
+		padding-top: 7px;
+		padding-left: 20px;
+		padding-right: 20px;
+		padding-bottom: 7px;
+    }
+    
+    button:hover {
+		background-color: snow;
+		transition-duration: 0.4s;
+	}
+    
+    #button1 {
+        position: absolute;
+		top: 70%;
+		left: 25%;
+		transform: translate(-50%, -50%)
+    }
+    
+    #button2 {
+    	position: absolute;
+    	top: 70%;
+		left: 75%;
+		transform: translate(-50%, -50%)
+    }
+    
+	</style>
+    
 </head>
+
 <body>
+
 	<div class=container>
 		<h1>Join Debate as</h1>
+        
+         <button type="button" id="button1" onclick=>Spectator</button> 
+        
+         <button type="button" id="button2" onclick=>Judge</button> 
 	</div>
+    
 </body>
 </html>
