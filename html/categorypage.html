@@ -1,7 +1,80 @@
-<html>
-	<h1>Top Text</h1>
-	<center><button>Novice</button></center>
-	<center><button>Junior</button></center>
-	<center><button>Senior</button></center>
+<!--Work in progress, still need to (probably) make the page look nicer, as well as
+	add code so the button clicks go places
+	-->
 
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+/* need to make it so buttons go somewhere (tournament bracket maybe?) when clicked */
+
+/*used to center tile (roughly) over the three buttons*/
+.center_text{position: absolute; top: 15%; left: 55%; transform: translate(-50%, -50%);}
+/* defining center positions for the three buttons*/
+.center_stuff{text-align: center;}
+/* reason for three seperate button classes is  clicking each
+button would take you to a different place (pretty sure)*/
+/* defines style for buttons such as size, color, etc.*/
+.button_novice{
+  background-color: blue; 
+  border: none;
+  color: white;
+  padding: 14px 40px;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 12px;
+  top: 30%;
+  position: absolute;
+  right:39%
+}
+.button_junior{
+  background-color: blue; 
+  border: none;
+  color: white;
+  padding: 14px 40px;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 12px;
+  top: 50%;
+  position: absolute;
+  right:39%
+}
+.button_senior{
+  background-color: blue; 
+  border: none;
+  color: white;
+  padding: 14px 40px;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 12px;
+  top: 70%;
+  position: absolute;
+  right:39%
+}
+/* need to probaly change background color / make look nicer */
+body{
+	text-align: center;
+}
+</style>
+</head>
+<body>
+	<!--title text with wrapper used to center it-->
+	<div class="center_text">
+	<h1> Please select your division</h1>
+	</div>
+    <!--first button -->
+	<div class="center_stuff">
+	<button class="button_novice">Novice</button>
+	</div>
+	<!--Second button -->
+	<div class="center_stuff">
+	<button class="button_junior">Junior</button>
+	</div>
+	<!--Third button -->
+	<div class="center_stuff">
+	<button class="button_senior">Senior</button>
+	</div>
+
+</body>
 </html>
