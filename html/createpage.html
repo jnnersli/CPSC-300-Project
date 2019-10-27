@@ -1,153 +1,207 @@
+<!DOCTYPE html>
 <html>
-<style>
-body {
-	background-color: #2C3539;
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 
-}
-h2 {
-	color: white;
-	text-align: center;
-
-}
-h3 {
-	color: white;
-	text-align: center;
-}
-div {
-
-	color: white;
-	text-align: center;
-
-}
-form {
-	color: white;
-	text-align: center;
-
-}
-button {
-
-	color: black;
-	text-align: center;
-	button-align: center;
-}
-p {
-	color:white;
-	text-align: center;
-
-
-}
-table td {
-
-	text-align: center;
-	color: white;
-
-}
-.dropbtn {
-	background-color: #3498DB;
-	color: white;
-	padding: 16px;
-	font-size: 16px;
-	border: none;
+	<title>Create a New Debate Event</title>
 	
-
-
-}
-
-.dropdown {
-	position: relative;
-	display: inline-block
-}
-.dropdown-content {
-	display: none;
-	position: absolute;
-	background-color: #f1f1f1;
-	min-width: 160px;
-	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-	z-index: 1;
-}
-.dropdown-content a {
-	color: black;
-	padding: 12px 16px;
-	text-decoration: none;
-	display: block;
-
-}
-.dropdown-content a:hover {background-color: #ddd}
-.dropdown:hover .dropdown-content {display: block;}
-.dropdown:hover .dropbtn {background-color: #3e841;}
-.show{display:block;}
-</style>
-	<body>
-		<h2>Create New Debate Event</h2>
+	<style>
+	/*........................ css ........................*/
 		
-		<script type="text/javascript">
-			window.onload = function() {
-				var randomNumber =Math.floor( Math.random()*10000+1);
-				var randomNumber2=Math.floor(Math.random()*10000+1);
-				while(randomNumber==randomNumber2){
-					randomNumber2=Math.floor(Math.random()*10000+1);
-				}
-				document.getElementById('boldStuff').innerHTML =randomNumber;
-				document.getElementById('boldStuff2').innerHTML =randomNumber2;
+		body {
+			background-color: #2C3539;
+			font-family: Helvetica, sans-serif;
+			color: white;
+		}
+		
+		.container {
+			display:flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		
+		.debateform {
+			background-color: rgba(230, 230, 230, 0.4);
+			border: 10px double black;
+			padding: 20px;
+			margin: 15px;
+			min-width: 500px;
+			max-width: 600px;
+		}
+		
+		.wrapper {
+			background-color: rgba(230, 230, 230, 0.4);
+			border: 10px double black;
+			display: flex;
+			flex-direction: column;
+			padding: 20px;
+			margin: 15px;
+		}
+		
+		.teamwrapper {
+			display: flex;
+			flex-direction: row;
+			padding-top: 10px;
+		}
+		
+		.teamform {
+			display: inline;
+			width: 100%;
+			margin-left: 10px;
+			margin-right: 10px;
+			padding: 10px;
+		}
+		
+		.buttons {
+			display: flex;
+			flex-direction: row;
+			margin: 5px;
+			box-sizing: border-box;
+		}
+		
+		.input {
+			font-family: Helvetica, sans-serif;
+			font-size: 0.9em;
+		}
+		
+		.dropdown {
+			position: relative;
+			display: inline-block;
+		}
+		
+		input {
+			margin: 5px; 
+			padding: 4px;
+			min-width: 100px;
+			max-width: 200px;
+		}
+		
+		textarea {
+			margin: 5px;
+			padding: 5px;
+		}
+		
+		button {
+			color: black;
+			padding: 5px;
+			margin: 5px;
+		}
+		
+		select {
+			font-size: 1em;
+			min-width: 150px;
+			padding: 2px;
+		}
+		
+	/*....................................................*/
+	</style>
+	
+	<script>
+	/*........................ JS ........................*/
+	
+		/*Generates random login keys for each new event*/
+		window.onload = function() {
+			var randomNumber =Math.floor( Math.random()*10000+1);
+			var randomNumber2=Math.floor(Math.random()*10000+1);
+			
+			while(randomNumber==randomNumber2){
+				randomNumber2=Math.floor(Math.random()*10000+1);
 			}
-		</script>
-		<!--<center><input type='button' value="Button 1" id="b1" onclick='changeText()'/></center>-->
-		<p>Spectator Key: <b id='boldStuff'>dude</b></p>
-		<p>Judge Key: <b id ='boldStuff2'>dude</b></p>
-	</body>
-
-	<form>
-		Date of Event:<br>
-		<input type="text" name="firstname"><br>
-	</form>
-	<form>
-		Debate Topic:<br>
-		<input type="text" name="firstname"><br>
-	</form>
-	<div class="dropdown">
-		<button onclick=myFunction()" class="dropbtn">Category</button>
-		<div id="myDropdown" class="dropdown-content">
-			<a href="#">Novice</a>
-			<a href="#">Junior</a>
-			<a href="#">Senior</a>
+			
+			document.getElementById('skey').innerHTML = randomNumber;
+			document.getElementById('jkey').innerHTML = randomNumber2;
+		}
+		
+		/*Sets the category heading*/
+		function categorySelect(category) {
+			document.getElementById("categoryheading").innerHTML = document.getElementById("category").option;
+		}
+	
+	/*....................................................*/
+	</script>
+</head>
+	
+<body>
+	<center>
+		
+	<!-- All elements are encased in a vertical flexbox so they cascade down the center -->
+	<div class="container">
+		
+	<!-- First section for general debate information -->
+	<div class="debateform">
+		<h1>Create a New Debate Event</h1>
+		
+		<p>Spectator Key: <b id='skey'></b></p>
+		
+		<p>Judge Key: <b id ='jkey'></b></p>
+	
+		<form>
+			<label for="date" required>Date of Event: </label>
+			<input class="input" type="date" name="date" id="date"><br>
+		</form>
+	
+		<form>
+			Debate Topics (separate by comma):<br>
+			<textarea class="input" rows="4" cols="50" name="topics" required> </textarea>
+		</form>
+	</div>
+		
+	<!-- Vertical flexbox containing information about pairs of teams -->
+	<div class="wrapper">
+		<!-- Category selection dropdown -->
+		<div class="dropdown">
+			<label for="category">Category: </label>
+			<select class="input" id="category" required>
+				<option value="0" selected></option>
+				<option value="1">Novice</option>
+				<option value="2">Junior</option>
+				<option value="3">Senior</option>
+			</select>
+		</div>
+			
+		<!-- Topic -->
+		<div>
+				
+		</div>
+		
+		<!-- This is a horizontal flexbox meant for holding the two team tables -->
+		<div class="teamwrapper" style="float: left">
+			<!-- First team -->
+			<div class="teamform">
+				<label for="school_1">School ID: </label>
+				<div><input class="input" type="text" size="30" id="school_1" required></div>
+				
+				<label for="student1_1">Student 1: </label>
+				<div><input class="input" type="text" size="30" id="student1_1" required></div>
+				
+				<label for="student2_1">School ID: </label>
+				<div><input class="input" type="text" size="30" id="student2_1" required></div>
+			</div>
+			
+			<!-- Second team -->
+			<div class="teamform">
+				<label for="school_2">School ID: </label>
+				<div><input class="input" type="text" size="30" id="school_2" required></div>
+			
+				<label for="student1_2">Student 1: </label>
+				<div><input class="input" type="text" size="30" id="student1_2" required></div>
+				
+				<label for="student2_2">Student 2: </label>
+				<div><input class="input" type="text" size="30" required></div>
+			</div>
 		</div>
 	</div>
-	<h3>Selected Category</h3>
-	<div>
-	<table style="float: left">
-		<tr>
-			<td><input type="text" size="30"/></td>
-			<td>School ID</td>
-		</tr>
-		<tr>
-			<td><input type="text" size="30"/></td>
-			<td>Student 1</td>
-		</tr>
-		<tr>
-			<td><input type="text" size="30"/></td>
-			<td>Student 2</td>
-		</tr>
-	</table>
+	
+	<!-- Just putting the buttons side by side -->
+	<div class="buttons">
+		<form><button id="addbutton">Add Teams</button></form>
+		<form action="categorypage.html" method="post">
+			<button type="submit" id="donebutton">Done</button>
+		</form>
 	</div>
-	<div>
-	<table style="float: left">
-		<tr>
-			<td><input type="text" size="30"/></td>
-			<td>School ID</td>
-		</tr>
-		<tr>
-			<td><input type="text" size="30"/></td>
-			<td>Student 2</td>
-		</tr>
-		<tr>
-			<td><input type="text" size="30"/></td>
-			<td>Student 2</td>
-		</tr>
-	</table>
-	</div>
-	<button>Add Teams</button>
-	<form action="categorypage.html" method="post">
 		
-		<button type="submite">Done</button>
-	</form>
+	</div>
+		
+	</center>
+</body>
 </html>
