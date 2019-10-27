@@ -1,22 +1,29 @@
 <!-- This is the code for the home page -->
-
+<!DOCTYPE html>
 <html>
-	<style> /*starting here is in CSS*/
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+	<title>Home</title>
+	
+	<style> 
+		/*........................ css ........................*/
 
 		/*The page background*/
 		body {
 			background-image: linear-gradient(to right, darkslategrey, salmon, darkslategrey);
 			background-image: no-repeat;
+			font-family: Helvetica, sans-serif;
 		}
 
 		/*Wrapper containing the title and two buttons*/		
 		div.container {
 			background-color: rgba(230, 230, 230, 0.4);
 			border: 10px double black;
-			padding-top: 20px;
+			padding-top: 10px;
 			padding-left: 50px;
 			padding-right: 50px;
-			padding-bottom: 35px;
+			padding-bottom: 30px;
 			position: absolute;
 			top: 40%;
 			left: 50%;
@@ -25,40 +32,57 @@
 
 		/*Title*/
 		h1 {	/*This is for the page title*/
-			font-family: Helvetica, sans-serif;
+			font-size: 1.9em;
 			color: black;
 			text-align: center;
-		}
+			}
 
 		/*Styling for the two buttons*/		
 		button {
 			background-color: white;
-			font-size: 0.85em;
+			font-size: 0.9em;
 			border: 1px black;
 			border-radius: 15px;
 			padding-top: 7px;
 			padding-left: 20px;
 			padding-right: 20px;
 			padding-bottom: 7px;
+			margin-bottom: 10px;
 		}
 
 		button:hover {
-			background-color: gainsboro;
-			transition-duration: 0.4s;
+		font-weight: bold;
+		transition-duration: 0.4s;
+		}
+	
+		form {
+			position: relative;
+			text-align: center;
+		}
+	
+		#create {
+			top: -2%;
+		}
+	
+		#join {
+			top: 2%;
 		}
 
-	/*end of CSS*/
+		/*....................................................*/
 	</style>
+</head>
 
+<body>
 	<div class=container>
 		<center><h1> Welcome to Debate Reporter </h1></center>
 	
-		<form action="createpage.html" method="post">
-			<center><button type="submit">Create Event</button></center>
+		<form action="createpage.html" method="post" id="create">
+			<button type="submit">Create Event</button>
 		</form>
 
-		<form action="categorypage.html" method="post">
-			<center><button type="submit">Join Event</button></center>
+		<form action="loginpage.html" method="post" id="join">
+			<button type="submit">Join Event</button>
 		</form>
 	</div>
+</body>
 </html>
