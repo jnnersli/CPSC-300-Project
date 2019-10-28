@@ -10,58 +10,88 @@
 		
 		body {
 			background-color: #2C3539;
-			font-family: Helvetica, sans-serif;
 			color: white;
-		}
-		
-		.container {
-			display:flex;
+			font-family: Helvetica Neue, Helvetica, sans-serif;
+			display: flex;
 			flex-direction: column;
 			align-items: center;
 		}
 		
-		.debateform {
-			background-color: rgba(230, 230, 230, 0.4);
-			border: 10px double black;
-			padding: 20px;
-			margin: 15px;
-			min-width: 500px;
-			max-width: 600px;
+		header {
+			width: 100%;
+			margin-left: 5%;
+			padding: 5%;
+			height: 10%;
 		}
 		
+		h1 {
+			color: white;
+			font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+			width: 100%;
+		}
+		
+		nav {
+			background-color: #dddddd;
+			padding: 5px;
+			margin: 10px;
+			width: 95%;
+			display: flex;
+			flex-direction: row;
+		}
+		
+		nav a {
+			color: black;
+			text-decoration: none;
+			margin: 0px;
+			margin-right: 10px;
+		}
+		
+		nav a:hover {color: #1d97af;}
+		
+		.debateform {
+			background-color: rgba(230, 230, 230, 0.3);
+			border: 10px double black;
+			width: 95%;
+		}
+		
+		p {margin: 5%;}
+		
 		.wrapper {
-			background-color: rgba(230, 230, 230, 0.4);
+			background-color: rgba(230, 230, 230, 0.3);
 			border: 10px double black;
 			display: flex;
 			flex-direction: column;
-			padding: 20px;
-			margin: 15px;
+			width: 95%;
 		}
 		
 		.teamwrapper {
 			display: flex;
 			flex-direction: row;
-			padding-top: 10px;
+			padding-top: 5%;
 		}
 		
 		.teamform {
 			display: inline;
 			width: 100%;
-			margin-left: 10px;
-			margin-right: 10px;
-			padding: 10px;
+			margin: 5%;
+		}
+		
+		a {
+			display: block;
+			margin-left: 5%;
+			margin-bottom: 1%;
 		}
 		
 		.buttons {
 			display: flex;
 			flex-direction: row;
-			margin: 5px;
+			margin: 5%;
 			box-sizing: border-box;
 		}
 		
 		.input {
 			font-family: Helvetica, sans-serif;
-			font-size: 0.9em;
+			font-size: 1em;
 		}
 		
 		.dropdown {
@@ -69,28 +99,41 @@
 			display: inline-block;
 		}
 		
+		label {
+			font-size: 1em;
+			margin-left: 5%;
+		}
+		
 		input {
-			margin: 5px; 
+			margin: 2.5%; 
 			padding: 4px;
-			min-width: 100px;
-			max-width: 200px;
+			min-width: 75%;
+			max-width: 75%;
 		}
 		
 		textarea {
-			margin: 5px;
+			margin-left: 5%;
+			margin-bottom: 5%;
 			padding: 5px;
 		}
 		
 		button {
 			color: black;
 			padding: 5px;
-			margin: 5px;
 		}
 		
 		select {
 			font-size: 1em;
-			min-width: 150px;
+			min-width: 75%;
+			max-width: 75%;
 			padding: 2px;
+			margin-top: 5%;
+			margin-left: 2%
+		}
+		
+		#date {
+			margin-bottom: 5%;
+			margin-left: 5%
 		}
 		
 	/*....................................................*/
@@ -116,38 +159,44 @@
 		function categorySelect(category) {
 			document.getElementById("categoryheading").innerHTML = document.getElementById("category").option;
 		}
+		
+		function addTeams() {
+			var form = document.getElementById("pairsform");
+			
+			var form2 = form.cloneNode(true);
+			
+			document.body.insertBefore(form2, document.getElementById("buttons"));
+		}
 	
 	/*....................................................*/
 	</script>
 </head>
 	
 <body>
-	<center>
-		
-	<!-- All elements are encased in a vertical flexbox so they cascade down the center -->
-	<div class="container">
-		
+	<header>
+		<h1>Create a New Debate Event</h1>
+	</header>
+	
+	<nav>
+		<a href="index.html">Home</a>
+		<a href="aboutpage.html">About</a>
+	</nav>
+	
 	<!-- First section for general debate information -->
 	<div class="debateform">
-		<h1>Create a New Debate Event</h1>
-		
 		<p>Spectator Key: <b id='skey'></b></p>
 		
 		<p>Judge Key: <b id ='jkey'></b></p>
 	
-		<form>
 			<label for="date" required>Date of Event: </label>
-			<input class="input" type="date" name="date" id="date"><br>
-		</form>
-	
-		<form>
-			Debate Topics (separate by comma):<br>
-			<textarea class="input" rows="4" cols="50" name="topics" required> </textarea>
-		</form>
+			<input class="input" type="date" name="date" id="date">
+			
+			<a>Debate Topics (separate by comma):</a>
+			<textarea class="input" rows="4" cols="60" name="topics" required> </textarea>
 	</div>
 		
 	<!-- Vertical flexbox containing information about pairs of teams -->
-	<div class="wrapper">
+	<div class="wrapper" id="pairsform">
 		<!-- Category selection dropdown -->
 		<div class="dropdown">
 			<label for="category">Category: </label>
@@ -193,15 +242,11 @@
 	</div>
 	
 	<!-- Just putting the buttons side by side -->
-	<div class="buttons">
-		<form><button id="addbutton">Add Teams</button></form>
+	<div class="buttons" id="buttons">
+		<button id="addbutton" onclick="addTeams()">Add Teams</button>
 		<form action="categorypage.html" method="post">
 			<button type="submit" id="donebutton">Done</button>
 		</form>
 	</div>
-		
-	</div>
-		
-	</center>
 </body>
 </html>
