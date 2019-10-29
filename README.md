@@ -1,2 +1,2 @@
 # CPSC-300-Project
-I added some stuff directly to master by accident. I don't think anything that I didn't work on was changed -Jenny
+With this branch you must execute the python file test.py with a python3 test.py (only works with python 3)
