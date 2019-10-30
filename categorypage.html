@@ -1,0 +1,112 @@
+<!--Work in progress, still need to (probably) make the page look nicer, as well as
+	add code so the button clicks go places
+	-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+/* need to make it so buttons go somewhere (tournament bracket maybe?) when clicked */
+
+/*used to center tile (roughly) over the three buttons*/
+.center_text{position: absolute; top: 15%; left: 55%; transform: translate(-50%, -50%);}
+/* defining center positions for the three buttons*/
+.center_stuff{text-align: center;}
+/* reason for three seperate button classes is  clicking each
+button would take you to a different place (pretty sure)*/
+/* defines style for buttons such as size, color, etc.*/
+.button_novice{
+  background-color: blue; 
+  border: none;
+  color: white;
+  /* Next three lines of code define the time the hover effect takes to occur on the buttons
+  	and changes the cursor from an arror to a pointer*/
+  -webkit-transition-duration: 0.4s; 
+  transition-duration: 0.4s;
+  cursor: pointer;
+  padding: 14px 40px;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 12px;
+  top: 30%;
+  position: absolute;
+  right:39%
+  
+}
+/* When a button is hovered, the button turns red*/
+.button_novice:hover{
+  background-color: red;
+  color: white;
+}
+.button_junior{
+  background-color: blue; 
+  border: none;
+  color: white;
+  -webkit-transition-duration: 0.4s; 
+  transition-duration: 0.4s;
+  cursor: pointer;
+  padding: 14px 40px;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 12px;
+  top: 50%;
+  position: absolute;
+  right:39%
+}
+/* When a button is hovered, the button turns red*/
+.button_junior:hover{
+  background-color: red;
+  color: white;
+}
+.button_senior{
+  background-color: blue; 
+  border: none;
+  color: white;
+  -webkit-transition-duration: 0.4s; 
+  transition-duration: 0.4s;
+  cursor: pointer;
+  padding: 14px 40px;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 12px;
+  top: 70%;
+  position: absolute;
+  right:39%
+}
+/* When a button is hovered, the button turns red*/
+.button_senior:hover{
+  background-color: red;
+  color: white;
+}
+/* need to probaly change background color / make look nicer */
+body{
+	text-align: center;
+    background-color:gray;
+}
+</style>
+</head>
+<body>
+	<!--title text with wrapper used to center it-->
+	<div class="center_text">
+	<h1> Please select your division</h1>
+	</div>
+    <!--first button -->
+	<div class="center_stuff">
+     <!--By default the below three links go to google. Needs to be changed -->
+	<!-- bellow line creates a link with the characteristics of the button_novice class -->
+        <a class="button_novice" target="_blank" href="https://www.google.com/">Novice</a>
+	</div>
+	<!--Second button -->
+	<div class="center_stuff">
+    <!-- bellow line creates a link with the characteristics of the button_junior class -->
+		<a class="button_junior" target="_blank" href="https://www.google.com/">Junior</a>
+	</div>
+	<!--Third button -->
+	<div class="center_stuff">
+    <!-- bellow line creates a link with the characteristics of the button_senior class -->
+		<a class="button_senior" target="_blank" href="https://www.google.com/">Senior</a>
+	</div>
+
+</body>
+</html>
