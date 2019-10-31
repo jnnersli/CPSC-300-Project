@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<!-- stuff left to do is all the input boxes for two of the grids as well as make grids look nice + that trademark thing in the bottom left. -->
+<html>
+<head>
+<style>
+/* displaying team totals */
+.grid-grades{
+	display: grid;
+    grid-template-columns:auto auto auto auto auto auto auto auto;/* 5x8 grid*/
+    grid-template-rows: auto auto auto auto auto;
+    grid-gap: 10px;
+    background-color: white;
+  	padding: 10px;
+    color: black;
+}
+.grid-grades > div{
+	background-color: white;
+    padding: 20px 0;
+  	font-size: 15px;
+}
+
+/* bottom left and right scoresheets */
+.grid-containertype2{
+	display: grid;
+    grid-template-columns:auto auto auto auto auto auto auto ; /*11x7 grid */
+    grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto;
+    grid-gap: 10px;
+    background-color: white;
+  	padding: 10px;
+    color: black;
+}
+.grid-containertype2 > div{
+  background-color: white;
+  padding: 20px 0;
+  font-size: 15px;
+}
+/* top left and right scoresheets */
+.grid-containertype1{
+    display: grid;
+  	grid-template-columns: auto auto auto auto auto auto auto ;/*  12x7 grid */
+    grid template-rows: auto auto auto auto auto auto auto auto auto auto auto auto;
+ 	grid-gap: 10px;
+    background-color: white;
+  	padding: 10px;
+    color: black;
+}
+.grid-containertype1 > div {
+  background-color: white; 
+  padding: 20px 0;
+  font-size: 15px;
+}
+/*classes for placing at a specific spot in grid */
+/*stuff like 1st Affirmative/ 1st proposition etc. */
+.current-debate-section{
+ 	grid-row-start: 2;
+    grid-row-end: 2;
+    grid-column-start: 2;
+    grid-column-end: 6;
+}
+.judge-name{
+	grid-column-start: 1;
+    grid-column-end: 5;
+    text-align: left;
+}
+.Room{
+	grid-column-start: 6;
+    grid-column-end: 7;
+}
+.name{/* isn't elaborated as to name of what in scoresheet*/
+	grid-row-start: 2;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 1;
+}
+.team-code{
+	grid-row-start: 2;
+    grid-row-end: 2;
+    grid-column-start: 7;
+    grid-column-end: 7;
+    text-decoration: underline;
+}
+.criteria{
+	grid-row-start: 3;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    text-decoration: underline;
+}
+.poor{
+	grid-row-start: 3;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 2;
+}
+.weak{
+	grid-row-start: 3;
+    grid-row-end: 3;
+    grid-column-start: 3;
+    grid-column-end: 3;
+}
+.avg{
+	grid-row-start: 3;
+    grid-row-end: 3;
+    grid-column-start: 4;
+    grid-column-end: 4;
+}
+.good{
+	grid-row-start: 3;
+    grid-row-end: 3;
+    grid-column-start: 5;
+    grid-column-end: 5;
+}
+.great{
+	grid-row-start: 3;
+    grid-row-end: 3;
+    grid-column-start: 6;
+    grid-column-end: 6;
+}
+.Total{
+	grid-row-start: 3;
+    grid-row-end: 3;
+    grid-column-start: 7;
+    grid-column-end: 7;
+    text-decoration: underline;
+}
+/* stopped here for cspc 321 class */
+.org-struc{
+	grid-row-start: 4;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 1;
+}
+.evi-analy{
+	grid-row-start: 5;
+    grid-row-end: 5;
+    grid-column-start: 1;
+    grid-column-end: 1;
+}
+.reb-clash{
+	grid-row-start: 6;
+    grid-row-end: 6;
+    grid-column-start: 1;
+    grid-column-end: 1;
+}
+.dev-eti{
+	grid-row-start: 7;
+    grid-row-end: 7;
+    grid-column-start: 1;
+    grid-column-end: 1;
+}
+.que-resp{
+	grid-row-start: 8;
+    grid-row-end: 8;
+    grid-column-start: 1;
+    grid-column-end: 1;
+}
+.commentsfortype1{
+	grid-row-start: 9;
+    grid-row-end: 12;
+    grid-column-start: 1;
+    grid-column-end: 6;
+}
+.total-score{
+	grid-row-start: 9;
+    grid-row-end: 12;
+    grid-column-start: 7;
+    grid-column-end: 7;
+}
+
+/* still have to do input boxes for form type1 and type2*/
+input-box{
+	
+}
+/* stuff exlcusive to type2 grid */
+/* eg round 1 like in a fight */
+.round{
+	grid-row-start: 1;
+    grid-row-end: 1;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+.commentsfortype2{
+	grid-row-start: 8;
+    grid-row-end: 12;
+    grid-column-start: 1;
+    grid-column-end: 6;
+}
+/* novice junior senior */
+.division{
+	grid-row-start: 1;
+    grid-row-end: 1;
+    grid-column-start: 3;
+    grid-column-end: 6;
+}
+
+/* start of stuff for the teamtotals grid */
+.firstaff-prop{
+	grid-row-start: 1;
+    grid-row-end: 1;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.secondaff-prop{
+	grid-row-start: 2;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.aff-prop-score{
+	grid-row-start: 3;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.gridtitleblock{
+	grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 4;
+    grid-column-end: 5;
+}
+.firstneg-opp{
+	grid-row-start: 1;
+    grid-row-end: 1;
+    grid-column-start: 6;
+    grid-column-end: 8;
+}
+.secondneg-opp{
+	grid-row-start: 2;
+    grid-row-end: 2;
+    grid-column-start: 6;
+    grid-column-end: 8;
+}
+.neg-opp-score{
+	grid-row-start: 3;
+    grid-row-end: 3;
+    grid-column-start: 6;
+    grid-column-end: 8;
+}
+.winner-decl-sig-block{
+	grid-row-start: 4;
+    grid-row-end: 5;
+    grid-column-start: 1;
+    grid-column-end: 8;
+}
+/* end of stuff for teamtotals grid */
+
+/* centers and underlines the title*/
+h1{
+	text-align: center;
+    text-decoration: underline;
+}
+body{
+/* not working currently XD */
+	color: black;
+    background-color: white;
+}
+
+</style>
+</head>
+<body>
+	 <h1>DSABC OFFICIAL JUDGEMENT SCORESHEET</h1> 
+     <div class="grid-containertype1">
+     	<div class="judge-name">Judge's Name:</div>
+        <div class="Room">Room:</div>
+        <div class="name">Name:</div>
+        <div class="team-code">Team<br>Code</div>
+        <div class="criteria">Criteria</div>
+        <div class="poor">Poor</div>
+        <div class="weak">Weak</div>
+        <div class="avg">Avg.</div>
+        <div class="good">Good</div>
+        <div class="great">Great</div>
+        <div class="Total">Totals</div>
+     </div>
+
+</body>
+
+</html>
