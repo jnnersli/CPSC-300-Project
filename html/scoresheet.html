@@ -7,67 +7,65 @@
 /* grid which contains all grids */
 /* wrapper */
 .gparent-grid{
-	display: grid;
+    display: grid;
     grid-template-columns: 840px;
     grid-gap: 10px;
     background-color: white;
-  	padding: 10px;
+    padding: 10px;
     color: blue;
     grid-gap: 5px;
     justify-content: center;
 }
 .gparent-grid > div{
-	background-color: black;
+    background-color: black;
     padding: 20px 1px;
-  	font-size: 15px;
+    font-size: 15px;
 }
 .parent-grid{
-	display: grid;
+    display: grid;
     grid-template-columns: 420px 420px;
     grid-gap: 10px;
     background-color: white;
-  	padding: 10px;
+    padding: 10px;
     color: blue;
     grid-gap: 5px;
     left: 25%;
 }
 .parent-grid > div{
-	background-color: black;
+    background-color: black;
     padding: 20px 1px;
-  	font-size: 15px;
+    font-size: 15px;
 }
 /* displaying team totals */
 .grid-grades{
-	display: grid;
+    display: grid;
     grid-template-columns:auto auto auto auto auto auto auto auto auto auto auto auto auto auto;/* 5x14 grid*/
     grid-template-rows: auto auto auto auto auto;
     grid-gap: 10px;
-  	background-color: black;
-  	padding: 10px;
+    background-color: black;
+    padding: 10px;
     color: white;
     grid-gap: 5px;
 }
 .grid-grades > div{
-	background-color: white;
+    background-color: white;
     padding: 20px 1px;
-  	font-size: 15px;
+    font-size: 15px;
 }
-
-
 /*  left and right scoresheets */
 .grid-containertype1{
     display: grid;
-  	grid-template-columns: auto auto auto auto auto auto auto;/*  12x7 grid */
+    grid-template-columns: auto auto auto auto auto auto auto;/*  12x7 grid */
     grid template-rows: auto auto auto auto auto auto auto auto auto auto auto auto:
     background-color: white;
-  	padding: 10px;
+    padding: 10px;
     color: white;
     grid-gap: 5px; 
 }
 .grid-containertype1 > div {
-  background-color: white; 
-  padding: 20px 1px;
-  font-size: 15px;
+    background-color: white; 
+    padding: 20px 1px;
+    font-size: 15px;
 }
 /*classes for placing at a specific spot in grid */
 /*stuff like 1st Affirmative/ 1st proposition etc. */
@@ -148,21 +146,20 @@
     grid-area: 9/7/12/7;
     text-align: center;
 }
-
 .my-text{
-	width: 20px;
+    width: 20px;
     background-color: white;
 }
 .judge-text{
-	width: 150px;
+    width: 150px;
     background-color: white;
 }
 .name-text{
-	width: 70px;
+    width: 70px;
     background-color: white;
 }
 .room-text{
-	width: 40px;
+    width: 40px;
     background-color: white;
 }
 .input1{
@@ -180,7 +177,7 @@
     text-align: center;
 }
 .name2{
-	grid-area: 1/1/1/1;
+    grid-area: 1/1/1/1;
     text-align: center;
 }
 .current-debate-section2{
@@ -275,7 +272,7 @@
 
 /* centers and underlines the title*/
 h1{
-	text-align: center;
+text-align: center;
     text-decoration: underline;
 }
 body{
@@ -289,49 +286,49 @@ body{
      <div class="gparent-grid"><!-- begging of grand parent grid-->
      	<div class="parent-grid"><!-- beginning of parent grid -->
      		<div class="grid-containertype1"> <!-- beginning of topleft grid-->
-        		<div class="judge-name">Judge's Name:
-        			<input type="text" class="judge-text" maxlength="30">
-        		</div>
-        		<div class="Room">Room:
-        			<input type="text" class="room-text" maxlength="10">
-        		</div>
-        		<div class="name">Name:<br>
-        			<input type="text" class="name-text" maxlength="10">
-        		</div>
-       			<div class="current-debate-section">1st Affirmative/1st Proposition</div>
-       		    <div class="team-code">Team<br>Code</div>
+        	<div class="judge-name">Judge's Name:
+        		<input type="text" class="judge-text" maxlength="30">
+        	</div>
+        	<div class="Room">Room:
+        		<input type="text" class="room-text" maxlength="10">
+        	</div>
+        	<div class="name">Name:<br>
+        		<input type="text" class="name-text" maxlength="10">
+        	</div>
+       		<div class="current-debate-section">1st Affirmative/1st Proposition</div>
+       	        <div class="team-code">Team<br>Code</div>
                 <div class="criteria">Criteria</div>
                 <div class="poor">15<br>Poor</div>
-        		<div class="weak">Weak</div>
-       		    <div class="avg">Avg.</div>
-        		<div class="good">Good</div>
-       		    <div class="great">Great</div>
-        		<div class="Total">Totals</div>
-        		<div class="org-struc">Organization/<br>Structure</div>
-        		<!-- beginning of  textboxs for organization/sturcture -->
-        		<div class="input1">
-        			<input type="text" class="my-text" maxlength="2">
-        		</div>
-        		<div class="input1">
-        			<input type="text" class="my-text" maxlength="2">
-        		</div>
-        		<div class="input1">
-        			<input type="text" class="my-text" maxlength="2">
-       		    </div>
-        		<div class="input1">
-        			<input type="text" class="my-text" maxlength="2">
-        		</div>
-        		<div class="input1">
-        			<input type="text" class="my-text" maxlength="2">
-        		</div>
-        		<div class="input1">
-        			<input type="text" class="my-text" maxlength="2">
-        		</div>
-        		<!-- end -->
-        		<div class="evi-analy">Evidence/<br>Analysis</div>
-        		<!-- beginning of  textboxs for evidence/analysis -->
-        		<div class="input1">
-        			<input type="text" class="my-text" maxlength="2">
+        	<div class="weak">Weak</div>
+       		<div class="avg">Avg.</div>
+        	<div class="good">Good</div>
+       	        <div class="great">Great</div>
+        	<div class="Total">Totals</div>
+        	<div class="org-struc">Organization/<br>Structure</div>
+        	<!-- beginning of  textboxs for organization/sturcture -->
+        	<div class="input1">
+        		<input type="text" class="my-text" maxlength="2">
+        	</div>
+        	<div class="input1">
+        		<input type="text" class="my-text" maxlength="2">
+        	</div>
+        	<div class="input1">
+        		<input type="text" class="my-text" maxlength="2">
+       		</div>
+        	<div class="input1">
+        		<input type="text" class="my-text" maxlength="2">
+        	</div>
+        	<div class="input1">
+        		<input type="text" class="my-text" maxlength="2">
+        	</div>
+        	<div class="input1">
+        		<input type="text" class="my-text" maxlength="2">
+        	</div>
+        	<!-- end -->
+        	<div class="evi-analy">Evidence/<br>Analysis</div>
+        	<!-- beginning of  textboxs for evidence/analysis -->
+        	<div class="input1">
+        		<input type="text" class="my-text" maxlength="2">
                 </div>
                 <div class="input1">
                     <input type="text" class="my-text" maxlength="2">
