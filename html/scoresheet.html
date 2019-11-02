@@ -1,246 +1,275 @@
+
 <!DOCTYPE html>
 <!-- stuff left to do is all the input boxes for two of the grids as well as make grids look nice + that trademark thing in the bottom left. -->
 <html>
 <head>
 <style>
+/* grid which contains all grids */
+/* wrapper */
+.gparent-grid{
+	display: grid;
+    grid-template-columns: 840px;
+    grid-gap: 10px;
+    background-color: white;
+  	padding: 10px;
+    color: blue;
+    grid-gap: 5px;
+    justify-content: center;
+}
+.gparent-grid > div{
+	background-color: black;
+    padding: 20px 1px;
+  	font-size: 15px;
+}
+.parent-grid{
+	display: grid;
+    grid-template-columns: 420px 420px;
+    grid-gap: 10px;
+    background-color: white;
+  	padding: 10px;
+    color: blue;
+    grid-gap: 5px;
+    left: 25%;
+}
+.parent-grid > div{
+	background-color: black;
+    padding: 20px 1px;
+  	font-size: 15px;
+}
 /* displaying team totals */
 .grid-grades{
 	display: grid;
-    grid-template-columns:auto auto auto auto auto auto auto auto;/* 5x8 grid*/
+    grid-template-columns:auto auto auto auto auto auto auto auto auto auto auto auto auto auto;/* 5x14 grid*/
     grid-template-rows: auto auto auto auto auto;
     grid-gap: 10px;
-    background-color: white;
+  	background-color: black;
   	padding: 10px;
-    color: black;
+    color: white;
+    grid-gap: 5px;
 }
 .grid-grades > div{
 	background-color: white;
-    padding: 20px 0;
+    padding: 20px 1px;
   	font-size: 15px;
 }
 
-/* bottom left and right scoresheets */
-.grid-containertype2{
-	display: grid;
-    grid-template-columns:auto auto auto auto auto auto auto ; /*11x7 grid */
-    grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto;
-    grid-gap: 10px;
-    background-color: white;
-  	padding: 10px;
-    color: black;
-}
-.grid-containertype2 > div{
-  background-color: white;
-  padding: 20px 0;
-  font-size: 15px;
-}
-/* top left and right scoresheets */
+
+/*  left and right scoresheets */
 .grid-containertype1{
     display: grid;
-  	grid-template-columns: auto auto auto auto auto auto auto ;/*  12x7 grid */
-    grid template-rows: auto auto auto auto auto auto auto auto auto auto auto auto;
- 	grid-gap: 10px;
+  	grid-template-columns: auto auto auto auto auto auto auto;/*  12x7 grid */
+    grid template-rows: auto auto auto auto auto auto auto auto auto auto auto auto:
     background-color: white;
   	padding: 10px;
-    color: black;
+    color: white;
+    grid-gap: 5px; 
 }
 .grid-containertype1 > div {
   background-color: white; 
-  padding: 20px 0;
+  padding: 20px 1px;
   font-size: 15px;
 }
 /*classes for placing at a specific spot in grid */
 /*stuff like 1st Affirmative/ 1st proposition etc. */
 .current-debate-section{
- 	grid-row-start: 2;
-    grid-row-end: 2;
-    grid-column-start: 2;
-    grid-column-end: 6;
+    text-align: center;
+    grid-area: 2/2/2/7;
 }
 .judge-name{
-	grid-column-start: 1;
-    grid-column-end: 5;
     text-align: left;
+    grid-area: 1/1/1/6;
 }
 .Room{
-	grid-column-start: 6;
-    grid-column-end: 7;
+    grid-area: 1/6/1/8;
 }
 .name{/* isn't elaborated as to name of what in scoresheet*/
-	grid-row-start: 2;
-    grid-row-end: 2;
-    grid-column-start: 1;
-    grid-column-end: 1;
+    grid-area: 2/1/2/1;
+    text-align: center;
 }
 .team-code{
-	grid-row-start: 2;
-    grid-row-end: 2;
-    grid-column-start: 7;
-    grid-column-end: 7;
+    grid-area: 2/7/2/7;
     text-decoration: underline;
+    text-align: center;
 }
 .criteria{
-	grid-row-start: 3;
-    grid-row-end: 3;
-    grid-column-start: 1;
-    grid-column-end: 1;
+    grid-area: 3/1/3/1;
     text-decoration: underline;
+    text-align: center;
 }
 .poor{
-	grid-row-start: 3;
-    grid-row-end: 3;
-    grid-column-start: 2;
-    grid-column-end: 2;
+    grid-area: 3/2/3/2;
+    text-align: center;
 }
 .weak{
-	grid-row-start: 3;
-    grid-row-end: 3;
-    grid-column-start: 3;
-    grid-column-end: 3;
+    grid-area: 3/3/3/3;
+    text-align: center;
 }
 .avg{
-	grid-row-start: 3;
-    grid-row-end: 3;
-    grid-column-start: 4;
-    grid-column-end: 4;
+    grid-area: 3/4/3/4;
+    text-align: center;
 }
 .good{
-	grid-row-start: 3;
-    grid-row-end: 3;
-    grid-column-start: 5;
-    grid-column-end: 5;
+    grid-area: 3/5/3/5;
+    text-align: center;
 }
 .great{
-	grid-row-start: 3;
-    grid-row-end: 3;
-    grid-column-start: 6;
-    grid-column-end: 6;
+    grid-area: 3/6/3/6;
+    text-align: center;
 }
 .Total{
-	grid-row-start: 3;
-    grid-row-end: 3;
-    grid-column-start: 7;
-    grid-column-end: 7;
+    grid-area: 3/7/3/7;
     text-decoration: underline;
+    text-align: center;
 }
-/* stopped here for cspc 321 class */
 .org-struc{
-	grid-row-start: 4;
-    grid-row-end: 4;
-    grid-column-start: 1;
-    grid-column-end: 1;
+    grid-area: 4/1/4/1;
+    text-align: center;
 }
 .evi-analy{
-	grid-row-start: 5;
-    grid-row-end: 5;
-    grid-column-start: 1;
-    grid-column-end: 1;
+    grid-area: 5/1/5/1;
+    text-align: center;
 }
 .reb-clash{
-	grid-row-start: 6;
-    grid-row-end: 6;
-    grid-column-start: 1;
-    grid-column-end: 1;
+    grid-area: 6/1/6/1;
+    text-align: center;
 }
 .dev-eti{
-	grid-row-start: 7;
-    grid-row-end: 7;
-    grid-column-start: 1;
-    grid-column-end: 1;
+    grid-area: 7/1/7/1;
+    text-align: center;
 }
 .que-resp{
-	grid-row-start: 8;
-    grid-row-end: 8;
-    grid-column-start: 1;
-    grid-column-end: 1;
+    grid-area: 8/1/8/1;
+    text-align: center;
 }
 .commentsfortype1{
-	grid-row-start: 9;
-    grid-row-end: 12;
-    grid-column-start: 1;
-    grid-column-end: 6;
+    grid-area: 9/1/12/7;
 }
 .total-score{
-	grid-row-start: 9;
-    grid-row-end: 12;
-    grid-column-start: 7;
-    grid-column-end: 7;
+    grid-area: 9/7/12/7;
+    text-align: center;
 }
 
-/* still have to do input boxes for form type1 and type2*/
-input-box{
-	
+.my-text{
+	width: 20px;
+    background-color: white;
 }
+.judge-text{
+	width: 150px;
+    background-color: white;
+}
+.name-text{
+	width: 70px;
+    background-color: white;
+}
+.room-text{
+	width: 40px;
+    background-color: white;
+}
+.input1{
+    text-align: center;
+}	
 /* stuff exlcusive to type2 grid */
 /* eg round 1 like in a fight */
 .round{
-	grid-row-start: 1;
-    grid-row-end: 1;
-    grid-column-start: 1;
-    grid-column-end: 2;
-}
-.commentsfortype2{
-	grid-row-start: 8;
-    grid-row-end: 12;
-    grid-column-start: 1;
-    grid-column-end: 6;
+    grid-area: 1/1/1/3;
+    text-align: center;
 }
 /* novice junior senior */
 .division{
-	grid-row-start: 1;
-    grid-row-end: 1;
-    grid-column-start: 3;
-    grid-column-end: 6;
+    grid-area: 1/3/1/8;
+    text-align: center;
 }
-
+.name2{
+	grid-area: 1/1/1/1;
+    text-align: center;
+}
+.current-debate-section2{
+    text-align: center;
+    grid-area: 1/2/1/7;
+}
+.team-code2{
+    grid-area: 1/7/1/7;
+    text-decoration: underline;
+    text-align: center;
+}
+.criteria2{
+    grid-area: 2/1/2/1;
+    text-decoration: underline;
+    text-align: center;
+}
+.poor2{
+    grid-area: 2/2/2/2;
+    text-align: center;
+}
+.weak2{
+    grid-area: 2/3/2/3;
+    text-align: center;
+}
+.avg2{
+    grid-area: 2/4/2/4;
+    text-align: center;
+}
+.good2{
+    grid-area: 2/5/2/5;
+    text-align: center;
+}
+.great2{
+    grid-area: 2/6/2/6;
+    text-align: center;
+}
+.Total2{
+    grid-area: 2/7/2/7;
+    text-decoration: underline;
+    text-align: center;
+}
+.org-struc2{
+    grid-area: 3/1/3/1;
+    text-align: center;
+}
+.evi-analy2{
+    grid-area: 4/1/4/1;
+    text-align: center;
+}
+.reb-clash2{
+    grid-area: 5/1/5/1;
+    text-align: center;
+}
+.dev-eti2{
+    grid-area: 6/1/6/1;
+    text-align: center;
+}
+.que-resp2{
+    grid-area: 7/1/7/1;
+    text-align: center;
+}
 /* start of stuff for the teamtotals grid */
 .firstaff-prop{
-	grid-row-start: 1;
-    grid-row-end: 1;
-    grid-column-start: 1;
-    grid-column-end: 3;
+    grid-area: 1/1/1/7;
 }
 .secondaff-prop{
-	grid-row-start: 2;
-    grid-row-end: 2;
-    grid-column-start: 1;
-    grid-column-end: 3;
+    grid-area: 2/1/2/7;
 }
 .aff-prop-score{
-	grid-row-start: 3;
-    grid-row-end: 3;
-    grid-column-start: 1;
-    grid-column-end: 3;
+    grid-area: 3/1/3/7;
 }
 .gridtitleblock{
-	grid-row-start: 1;
-    grid-row-end: 3;
-    grid-column-start: 4;
-    grid-column-end: 5;
+    grid-area: 1/8/4/10;
+    text-decoration: underline;
+    text-align: center;
 }
 .firstneg-opp{
-	grid-row-start: 1;
-    grid-row-end: 1;
-    grid-column-start: 6;
-    grid-column-end: 8;
+    grid-area: 1/10/1/14;
 }
 .secondneg-opp{
-	grid-row-start: 2;
-    grid-row-end: 2;
-    grid-column-start: 6;
-    grid-column-end: 8;
+    grid-area: 2/10/2/14;
 }
 .neg-opp-score{
-	grid-row-start: 3;
-    grid-row-end: 3;
-    grid-column-start: 6;
-    grid-column-end: 8;
+    grid-area: 3/10/3/14;
 }
 .winner-decl-sig-block{
-	grid-row-start: 4;
-    grid-row-end: 5;
-    grid-column-start: 1;
-    grid-column-end: 8;
+    grid-area: 4/1/5/15;
+    text-decoration: bold;
+    text-align: center;
 }
 /* end of stuff for teamtotals grid */
 
@@ -251,28 +280,573 @@ h1{
 }
 body{
 /* not working currently XD */
-	color: black;
-    background-color: white;
 }
 
 </style>
 </head>
 <body>
 	 <h1>DSABC OFFICIAL JUDGEMENT SCORESHEET</h1> 
-     <div class="grid-containertype1">
-     	<div class="judge-name">Judge's Name:</div>
-        <div class="Room">Room:</div>
-        <div class="name">Name:</div>
-        <div class="team-code">Team<br>Code</div>
-        <div class="criteria">Criteria</div>
-        <div class="poor">Poor</div>
-        <div class="weak">Weak</div>
-        <div class="avg">Avg.</div>
-        <div class="good">Good</div>
-        <div class="great">Great</div>
-        <div class="Total">Totals</div>
-     </div>
+     <div class="gparent-grid"><!-- begging of grand parent grid-->
+     	<div class="parent-grid"><!-- beginning of parent grid -->
+     		<div class="grid-containertype1"> <!-- beginning of topleft grid-->
+        		<div class="judge-name">Judge's Name:
+        			<input type="text" class="judge-text" maxlength="30">
+        		</div>
+        		<div class="Room">Room:
+        			<input type="text" class="room-text" maxlength="10">
+        		</div>
+        		<div class="name">Name:<br>
+        			<input type="text" class="name-text" maxlength="10">
+        		</div>
+       			<div class="current-debate-section">1st Affirmative/1st Proposition</div>
+       		    <div class="team-code">Team<br>Code</div>
+                <div class="criteria">Criteria</div>
+                <div class="poor">15<br>Poor</div>
+        		<div class="weak">Weak</div>
+       		    <div class="avg">Avg.</div>
+        		<div class="good">Good</div>
+       		    <div class="great">Great</div>
+        		<div class="Total">Totals</div>
+        		<div class="org-struc">Organization/<br>Structure</div>
+        		<!-- beginning of  textboxs for organization/sturcture -->
+        		<div class="input1">
+        			<input type="text" class="my-text" maxlength="2">
+        		</div>
+        		<div class="input1">
+        			<input type="text" class="my-text" maxlength="2">
+        		</div>
+        		<div class="input1">
+        			<input type="text" class="my-text" maxlength="2">
+       		    </div>
+        		<div class="input1">
+        			<input type="text" class="my-text" maxlength="2">
+        		</div>
+        		<div class="input1">
+        			<input type="text" class="my-text" maxlength="2">
+        		</div>
+        		<div class="input1">
+        			<input type="text" class="my-text" maxlength="2">
+        		</div>
+        		<!-- end -->
+        		<div class="evi-analy">Evidence/<br>Analysis</div>
+        		<!-- beginning of  textboxs for evidence/analysis -->
+        		<div class="input1">
+        			<input type="text" class="my-text" maxlength="2">
+                </div>
+                <div class="input1">
+                    <input type="text" class="my-text" maxlength="2">
+                </div>
+                <div class="input1">
+                    <input type="text" class="my-text" maxlength="2">
+                </div>
+                <div class="input1">
+                    <input type="text" class="my-text" maxlength="2">
+                </div>
+                <div class="input1">
+                    <input type="text" class="my-text" maxlength="2">
+                </div>
+                <div class="input1">
+                    <input type="text" class="my-text" maxlength="2">
+                </div>
+                <!-- end -->
+                <div class="reb-clash">Rebuttal/<br>Clash</div>
+                <!-- beginning of  textboxs for rebuttal/clash -->
+                <div class="input1">
+                    <input type="text" class="my-text" maxlength="2">
+                </div>
+                <div class="input1">
+                    <input type="text" class="my-text" maxlength="2">
+                </div>
+                <div class="input1">
+                    <input type="text" class="my-text" maxlength="2">
+                </div>
+                <div class="input1">
+                    <input type="text" class="my-text" maxlength="2">
+                </div>
+                <div class="input1">
+                    <input type="text" class="my-text" maxlength="2">
+                </div>
+                <div class="input1">
+                    <input type="text" class="my-text" maxlength="2">
+                </div>
+                <!-- end -->
+                <div class="dev-eti">Delivery/<br>Etiquette</div>
+                <!-- beginning of  textboxs for Delivery/etiquette -->
+                <div class="input1">
+                    <input type="text" class="my-text" maxlength="2">
+                </div>
+                <div class="input1">
+                    <input type="text" class="my-text" maxlength="2">
+                </div>
+                <div class="input1">
+                    <input type="text" class="my-text" maxlength="2">
+                </div>
+                <div class="input1">
+                    <input type="text" class="my-text" maxlength="2">
+                </div>
+                <div class="input1">
+                    <input type="text" class="my-text" maxlength="2">
+                </div>
+                <div class="input1">
+                    <input type="text" class="my-text" maxlength="2">
+                </div>
+                <!-- end -->
+                <div class="que-resp">Questioning/<br>Responding</div>
+                <!-- beginning of  textboxs for Questioning/Responding -->
+                <div class="input1">
+                    <input type="text" class="my-text" maxlength="2">
+                </div>
+                <div class="input1">
+                    <input type="text" class="my-text" maxlength="2">
+                </div>
+                <div class="input1">
+                    <input type="text" class="my-text" maxlength="2">
+                </div>
+                <div class="input1">
+                    <input type="text" class="my-text" maxlength="2">
+                </div>
+                <div class="input1">
+                    <input type="text" class="my-text" maxlength="2">
+                </div>
+                <div class="input1">
+                    <input type="text" class="my-text" maxlength="2">
+                </div>
+                <!-- end -->
+                <div class="commentsfortype1">Comments:
+                    <form>
+                        <textarea name="comment" rows="10" cols="40"></textarea>
+                    </form>
+                </div> <!--want to add underline here -->
+                <div class="total-score">Total<br>Score<br><br>
+                    <input type="text" class="my-text" maxlength="3">
+                    <br><br>/100
+                </div><!-- and here -->
+         </div><!--end of topleft grid-->
+         <!-- start of top right grid -->
+         <div class="grid-containertype1">
+            <div class="round">Round:1 2 3 4</div>
+            <div class="division">Novice | Junior | Senior</div>
+            <div class="name">Name:<br>
+                <input type="text" class="name-text" maxlength="10">
+            </div>
+            <div class="current-debate-section">1st Negative/1st Opposition</div>
+            <div class="team-code">Team<br>Code</div>
+            <div class="criteria">Criteria</div>
+            <div class="poor">15<br>Poor</div>
+            <div class="weak">Weak</div>
+            <div class="avg">Avg.</div>
+            <div class="good">Good</div>
+            <div class="great">Great</div>
+            <div class="Total">Totals</div>
+            <div class="org-struc">Organization/<br>Structure</div>
+            <!-- beginning of  textboxs for organization/sturcture -->
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <!-- end -->
+            <div class="evi-analy">Evidence/<br>Analysis</div>
+            <!-- beginning of  textboxs for evidence/analysis -->
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <!-- end -->
+            <div class="reb-clash">Rebuttal/<br>Clash</div>
+            <!-- beginning of  textboxs for rebuttal/clash -->
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <!-- end -->
+            <div class="dev-eti">Delivery/<br>Etiquette</div>
+            <!-- beginning of  textboxs for Delivery/etiquette -->
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <!-- end -->
+            <div class="que-resp">Questioning/<br>Responding</div>
+            <!-- beginning of  textboxs for Questioning/Responding -->
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <!-- end -->
+            <div class="commentsfortype1">Comments:
+                <form>
+                    <textarea name="comment" rows="10" cols="40"></textarea>
+                </form>
+            </div> <!--want to add underline here -->
+            <div class="total-score">Total<br>Score<br><br>
+                <input type="text" class="my-text" maxlength="3">
+                <br><br>/100
+            </div><!-- and here -->
+         </div><!-- end of top right grid -->
+         <!-- start of bottom left grid -->
+         <div class="grid-containertype1">
+            <div class="name2">Name:<br>
+                <input type="text" class="name-text" maxlength="10">
+            </div>
+            <div class="current-debate-section2">1st Positive/1st Proposition</div>
+            <div class="team-code2">Team<br>Code</div>
+            <div class="criteria2">Criteria</div>
+            <div class="poor2">15<br>Poor</div>
+            <div class="weak2">Weak</div>
+            <div class="avg2">Avg.</div>
+            <div class="good2">Good</div>
+            <div class="great2">Great</div>
+            <div class="Total2">Totals</div>
+            <div class="org-struc2">Organization/<br>Structure</div>
+            <!-- beginning of  textboxs for organization/sturcture -->
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <!-- end -->
+            <div class="evi-analy2">Evidence/<br>Analysis</div>
+            <!-- beginning of  textboxs for evidence/analysis -->
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <!-- end -->
+            <div class="reb-clash2">Rebuttal/<br>Clash</div>
+            <!-- beginning of  textboxs for rebuttal/clash -->
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <!-- end -->
+            <div class="dev-eti2">Delivery/<br>Etiquette</div>
+            <!-- beginning of  textboxs for Delivery/etiquette -->
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <!-- end -->
+            <div class="que-resp2">Questioning/<br>Responding</div>
+            <!-- beginning of  textboxs for Questioning/Responding -->
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <!-- end -->
+            <div class="commentsfortype1">Comments:
+                <form>
+                    <textarea name="comment" rows="10" cols="40"></textarea>
+                </form>
+            </div> <!--want to add underline here -->
+            <div class="total-score">Total<br>Score<br><br>
+                <input type="text" class="my-text" maxlength="3">
+                <br><br>/100
+           </div><!-- and here -->
+         </div><!-- end of bottom left grid-->
+         <!-- start of bottom right grid -->
+         <div class="grid-containertype1">
+            <div class="name2">Name:<br>
+                <input type="text" class="name-text" maxlength="10">
+            </div>
+            <div class="current-debate-section2">2nd Negative/2nd Opposition</div>
+            <div class="team-code2">Team<br>Code</div>
+            <div class="criteria2">Criteria</div>
+            <div class="poor2">15<br>Poor</div>
+            <div class="weak2">Weak</div>
+            <div class="avg2">Avg.</div>
+            <div class="good2">Good</div>
+            <div class="great2">Great</div>
+            <div class="Total2">Totals</div>
+            <div class="org-struc2">Organization/<br>Structure</div>
+            <!-- beginning of  textboxs for organization/sturcture -->
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <!-- end -->
+            <div class="evi-analy2">Evidence/<br>Analysis</div>
+            <!-- beginning of  textboxs for evidence/analysis -->
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <!-- end -->
+            <div class="reb-clash2">Rebuttal/<br>Clash</div>
+            <!-- beginning of  textboxs for rebuttal/clash -->
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <!-- end -->
+            <div class="dev-eti2">Delivery/<br>Etiquette</div>
+            <!-- beginning of  textboxs for Delivery/etiquette -->
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <!-- end -->
+            <div class="que-resp2">Questioning/<br>Responding</div>
+            <!-- beginning of  textboxs for Questioning/Responding -->
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <div class="input1">
+                <input type="text" class="my-text" maxlength="2">
+            </div>
+            <!-- end -->
+            <div class="commentsfortype1">Comments:
+                <form>
+                    <textarea name="comment" rows="10" cols="40"></textarea>
+                </form>
+            </div> <!--want to add underline here -->
+            <div class="total-score">Total<br>Score<br><br>
+                <input type="text" class="my-text" maxlength="3">
+                <br><br>/100
+            </div><!-- and here -->
+         </div>  
+         <!-- end of bottom right grid --> 
+        </div> <!-- end of parent grid-->
 
+        <!-- start of cumulative score grid -->
+         <div class="grid-grades">
+            <div class="firstaff-prop">1stAff./1stProp.</div>
+            <div class="input1">
+                    <input type="text" class="my-text" maxlength="3">/100
+            </div>
+            <div class="gridtitleblock">Final Team Totals</div>
+            <div class="firstneg-opp">1stNeg./1stOpp.</div>
+            <div class="input1">
+                    <input type="text" class="my-text" maxlength="3">/100
+            </div>
+            <div class="secondaff-prop">2ndAff./Prop.</div>
+            <div class="input1">
+                    <input type="text" class="my-text" maxlength="3">/100
+            </div>
+            <div class="secondneg-opp">2ndNeg./2ndOpp</div>
+            <div class="input1">
+                    <input type="text" class="my-text" maxlength="3">/100
+            </div>
+            <div class="aff-prop-score">Total Score</div>
+            <div class="input1">
+                    <input type="text" class="my-text" maxlength="3">/200
+            </div>
+            <div class="neg-opp-score">Total Score</div>
+            <div class="input1">
+                    <input type="text" class="my-text" maxlength="3">/200
+            </div>
+            <div class="winner-decl-sig-block">I therefore award this debate to the
+                <input type="text" class="my-judge" maxlength="30">. Signed:
+                <input type="text" class="my-room" maxlength="20">
+            </div>
+     	</div>
+     <!-- end of cumulative score grid -->
+     </div><!-- end of grandparent grid -->
 </body>
-
 </html>
