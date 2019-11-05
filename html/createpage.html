@@ -4,174 +4,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 
 	<title>Create a New Debate Event</title>
-	
-	<style>
-	/*........................ css ........................*/
-		
-		body {
-			background-color: #2C3539;
-			color: white;
-			font-family: Helvetica Neue, Helvetica, sans-serif;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-		}
-		
-		header {
-			width: 100%;
-			margin-left: 5%;
-			padding: 5%;
-			height: 10%;
-		}
-		
-		h1 {
-			color: white;
-			font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
-			width: 100%;
-		}
-		
-		nav {
-			background-color: #dddddd;
-			padding: 5px;
-			margin: 10px;
-			width: 95%;
-			display: flex;
-			flex-direction: row;
-		}
-		
-		nav a {
-			color: black;
-			text-decoration: none;
-			margin: 0px;
-			margin-right: 10px;
-		}
-		
-		nav a:hover {color: #1d97af;}
-		
-		.debateform {
-			background-color: rgba(230, 230, 230, 0.3);
-			border: 10px double black;
-			width: 95%;
-		}
-		
-		p {margin: 5%;}
-		
-		.wrapper {
-			background-color: rgba(230, 230, 230, 0.3);
-			border: 10px double black;
-			display: flex;
-			flex-direction: column;
-			width: 95%;
-		}
-		
-		.teamwrapper {
-			display: flex;
-			flex-direction: row;
-			padding-top: 5%;
-		}
-		
-		.teamform {
-			display: inline;
-			width: 100%;
-			margin: 5%;
-		}
-		
-		a {
-			display: block;
-			margin-left: 5%;
-			margin-bottom: 1%;
-		}
-		
-		.buttons {
-			display: flex;
-			flex-direction: row;
-			margin: 5%;
-			box-sizing: border-box;
-		}
-		
-		.input {
-			font-family: Helvetica, sans-serif;
-			font-size: 1em;
-		}
-		
-		.dropdown {
-			position: relative;
-			display: inline-block;
-		}
-		
-		label {
-			font-size: 1em;
-			margin-left: 5%;
-		}
-		
-		input {
-			margin: 2.5%; 
-			padding: 4px;
-			min-width: 75%;
-			max-width: 75%;
-		}
-		
-		textarea {
-			margin-left: 5%;
-			margin-bottom: 5%;
-			padding: 5px;
-		}
-		
-		button {
-			color: black;
-			padding: 5px;
-		}
-		
-		select {
-			font-size: 1em;
-			min-width: 75%;
-			max-width: 75%;
-			padding: 2px;
-			margin-top: 5%;
-			margin-left: 2%
-		}
-		
-		#date {
-			margin-bottom: 5%;
-			margin-left: 5%
-		}
-		
-	/*....................................................*/
-	</style>
-	
-	<script>
-	/*........................ JS ........................*/
-	
-		/*Generates random login keys for each new event*/
-		window.onload = function() {
-			var randomNumber =Math.floor( Math.random()*10000+1);
-			var randomNumber2=Math.floor(Math.random()*10000+1);
-			
-			while(randomNumber==randomNumber2){
-				randomNumber2=Math.floor(Math.random()*10000+1);
-			}
-			
-			document.getElementById('skey').innerHTML = randomNumber;
-			document.getElementById('jkey').innerHTML = randomNumber2;
-		}
-		
-		/*Sets the category heading*/
-		function categorySelect(category) {
-			document.getElementById("categoryheading").innerHTML = document.getElementById("category").option;
-		}
-		
-		function addTeams() {
-			var form = document.getElementById("pairsform");
-			
-			var form2 = form.cloneNode(true);
-			
-			document.body.insertBefore(form2, document.getElementById("buttons"));
-		}
-	
-	/*....................................................*/
-	</script>
+    
+    <link rel="stylesheet" type="text/css" href="createpage.css">
+    
+    <script src="createpage.js"></script>
 </head>
-	
 <body>
 	<header>
 		<h1>Create a New Debate Event</h1>
@@ -199,7 +36,7 @@
 	<div class="wrapper" id="pairsform">
 		<!-- Category selection dropdown -->
 		<div class="dropdown">
-			<label for="category">Category: </label>
+			<label for="category" id="categorylabel">Category: </label>
 			<select class="input" id="category" required>
 				<option value="0" selected></option>
 				<option value="1">Novice</option>
