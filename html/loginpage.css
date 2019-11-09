@@ -12,7 +12,7 @@ header {
 width: 100%;
 margin-left: 5%;
 padding: 5%;
-height: 10%;
+height: 40px;
 }
 
 h1 {
@@ -21,6 +21,7 @@ font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
 width: 100%;
 }
 
+/*Navigation bar*/
 nav {
 background-color: #dddddd;
 display: inline;
@@ -30,6 +31,7 @@ margin: 10px;
 width: 95%;
 }
 
+/*Navigation links*/
 nav a {
 color: black;
 text-decoration: none;
@@ -45,10 +47,12 @@ border: 10px double black;
 display: flex;
 flex-direction: column;
 justify-content: center;
+margin-right: 5%;
+margin-left: 5%;
 width: 95%;
-box-sizing: border-box;
 }
 
+/*Wrapper for the spectator/judge buttons*/
 .buttoncontainer {
 display: flex;
 flex-direction: row;
@@ -82,6 +86,19 @@ button:focus {
 font-weight: bold;
 }
 
+/*Wrapper for the key input and login button*/
+div.form {
+display: none;
+justify-content: center;
+}
+
+h2 {
+color: white;
+font-size: 1.1em;
+font-weight: normal;
+text-align: left;
+}
+
 #loginbutton {
 text-align: center;
 display: none;
@@ -98,16 +115,4 @@ background-color: rgb(230, 230, 230);
 
 #loginbutton:focus {
 font-weight: normal;
-}
-
-div.form {
-display: none;
-justify-content: center;
-}
-
-h2 {
-color: white;
-font-size: 1.1em;
-font-weight: normal;
-text-align: left;
 }

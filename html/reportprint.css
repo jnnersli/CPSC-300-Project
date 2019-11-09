@@ -1,0 +1,54 @@
+/*Style sheet for report.html (printed view)*/
+
+/*White background with black font*/
+body {
+background-color: white;
+color: black;
+font-family: Helvetica Neue, Helvetica, sans-serif;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+/*Condense the header to make more room on the page*/
+header {
+width: 100%;
+margin-left: 5%;
+padding: 5%;
+height: 30px;
+}
+
+h1 {
+color: black;
+font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+width: 100%;
+}
+
+/*Don't display navigation when printing*/
+nav {display: none;}
+
+h2 {
+    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+    width: 100%;
+    text-align: left;
+    margin-left: 5%;
+}
+
+.container {
+background-color: white;
+border: 10px double black;
+padding: 5%;
+display: flex;
+flex-direction: column;
+align-items: left;
+width: 85%;
+}
+
+h3{
+font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+margin-top: 0%;
+}
+
+a {
+margin: 5px;
+}

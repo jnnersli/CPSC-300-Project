@@ -12,9 +12,10 @@ header {
 width: 100%;
 margin-left: 5%;
 padding: 5%;
-height: 10%;
+height: 40px;
 }
 
+/*Navigation bar*/
 nav {
 background-color: #dddddd;
 display: inline;
@@ -24,6 +25,7 @@ margin: 10px;
 width: 95%;
 }
 
+/*Navigation links*/
 nav a {
 color: black;
 margin-left: 5px;
@@ -43,7 +45,6 @@ align-items: center;
 width: 95%;
 }
 
-/*Title*/
 h1, h2 {
 color: white;
 font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
@@ -54,7 +55,6 @@ h2 {
 padding: 5%;
 text-align: center;
 }
-
 
 /*Styling for the two buttons*/
 button {
@@ -73,5 +73,5 @@ font-weight: bold;
 transition-duration: 0.4s;
 }
 
-#button1 {margin-bottom: 10%;}
-#button2 {margin-bottom: 20%;}
+#button1 {margin-bottom: 10%;} /*Start new*/
+#button2 {margin-bottom: 20%;} /*Join existing*/
