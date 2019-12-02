@@ -1,0 +1,51 @@
+/*Style sheet for aboutpage.html*/
+
+body {
+background-color: #2C3539;
+color: white;
+font-family: Helvetica Neue, Helvetica, sans-serif;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+header {
+width: 100%;
+margin-left: 5%;
+padding: 5%;
+height: 40px;
+}
+
+/*Navigation bar*/
+nav {
+background-color: #dddddd;
+display: inline;
+text-align: left;
+padding: 5px;
+margin: 10px;
+width: 95%;
+}
+
+/*Navigation links*/
+nav a {
+color: black;
+text-decoration: none;
+}
+
+nav a:hover {color: #1d97af;}
+
+h1, h2 {font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;}
+
+/*Wrapper with all the text*/
+.container {
+background-color: rgba(230, 230, 230, 0.3);
+border: 10px double black;
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-right: 5%;
+margin-left: 5%;
+width: 95%;
+}
+
+p {width: 95%;}

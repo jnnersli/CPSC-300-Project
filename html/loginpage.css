@@ -1,0 +1,118 @@
+/*Style sheet for loginpage.html*/
+
+body {
+background-color: #2C3539;
+font-family: Helvetica Neue, Helvetica, sans-serif;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+header {
+width: 100%;
+margin-left: 5%;
+padding: 5%;
+height: 40px;
+}
+
+h1 {
+color: white;
+font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+width: 100%;
+}
+
+/*Navigation bar*/
+nav {
+background-color: #dddddd;
+display: inline;
+text-align: left;
+padding: 5px;
+margin: 10px;
+width: 95%;
+}
+
+/*Navigation links*/
+nav a {
+color: black;
+text-decoration: none;
+margin-left: 5px;
+margin-right: 5px;
+}
+
+nav a:hover {color: #1d97af;}
+
+.container {
+background-color: rgba(230, 230, 230, 0.3);
+border: 10px double black;
+display: flex;
+flex-direction: column;
+justify-content: center;
+margin-right: 5%;
+margin-left: 5%;
+width: 95%;
+}
+
+/*Wrapper for the spectator/judge buttons*/
+.buttoncontainer {
+display: flex;
+flex-direction: row;
+justify-content: center;
+width: 100%;
+}
+
+input {
+width: 150px;
+margin: 10px;
+}
+
+button {
+background-color: white;
+font-size: 1em;
+border: 1px black;
+border-radius: 15px;
+padding: 7px;
+width: 110px;
+margin: 20px;
+margin-top: 5%;
+margin-bottom: 5%;
+}
+
+button:hover {
+font-weight: bold;
+transition-duration: 0.4s;
+}
+
+button:focus {
+font-weight: bold;
+}
+
+/*Wrapper for the key input and login button*/
+div.form {
+display: none;
+justify-content: center;
+}
+
+h2 {
+color: white;
+font-size: 1.1em;
+font-weight: normal;
+text-align: left;
+}
+
+#loginbutton {
+text-align: center;
+display: none;
+border-radius: 0px;
+padding: 5px;
+margin-top: 10px;
+width: 50px;
+}
+
+#loginbutton:hover {
+font-weight: normal;
+background-color: rgb(230, 230, 230);
+}
+
+#loginbutton:focus {
+font-weight: normal;
+}
