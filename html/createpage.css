@@ -73,6 +73,14 @@ flex-direction: row;
 padding: 5%;
 }
 
+h2 {
+margin-left: 10px;
+min-width: 70%;
+max-width: 70%;
+font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+text-align: center;
+}
+
 /*Contains school id, student names and grades*/
 .teamform {
 display: inline;
