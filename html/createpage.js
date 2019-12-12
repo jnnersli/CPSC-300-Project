@@ -9,7 +9,7 @@ window.onload = function() {
         randomNumber2=Math.floor(Math.random()*10000+1);
     }
 
-    document.getElementById('skey').innerHTML = randomNumber;
+    document.getElementById('skey').innerHTML = "<?php echo $tempkey ?>";
     document.getElementById('jkey').innerHTML = randomNumber2;
 }
 
