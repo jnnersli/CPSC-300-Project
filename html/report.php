@@ -38,5 +38,15 @@
         <a>Comments:</a>
         <a>Total Score:</a>
 	</div>
+    
+    <div class=container>
+        <h3>Debate 2: Topic 2</h3>
+        <a>Organization/Structure:</a>
+        <a>Evidence/Analysis:</a>
+        <a>Delivery/Etiquette:</a>
+        <a>Questioning/Responding:</a>
+        <a>Comments:</a>
+        <a>Total Score:</a>
+    </div>
 </body>
 </html>
